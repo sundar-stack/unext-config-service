@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "resolveJsonModule":true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*.ts"],
+  "compileOnSave": false,
+  "exclude": ["node_modules"]
+}

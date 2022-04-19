@@ -1,0 +1,673 @@
+{
+  "info": {
+    "title": "Domain Configuration",
+    "version": "1.0.0"
+  },
+  "swagger": "2.0",
+  "paths": {
+    "/api/configservice/domainconfiguration/clearAll": {
+      "delete": {
+        "summary": "Deletes all configurations",
+        "tags": [
+          "Domain configuration"
+        ],
+        "responses": {
+          "200": {
+            "description": "Deletes all configurations",
+            "content": "appliction/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/createConfiguration": {
+      "post": {
+        "summary": "Creates configuration for specific domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "domaincofig",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/domaincofig"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "There are three required parameters, apibaseurl,domain and orgId for this API. These three parameters accepts string type only. The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The API creates domain with given configurations",
+            "content": "application/json"
+          },
+          "400": {
+            "description": "In case, if any parameter is empty, null, undefined, blank or if the jwttoken or refreshtoken is invalid 400 error will be thrown."
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/updateApiConfiguration": {
+      "put": {
+        "summary": "Updates configurations for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "domaincofig",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/domaincofig"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "There are three required parameters, apibaseurl,domain and orgId for this API. These three parameters accepts string type only. The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "appliction/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/updateProductConfiguration": {
+      "put": {
+        "summary": "Updates Product configurations for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "productconfig",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/productconfig"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/{domain}": {
+      "get": {
+        "summary": "gets configs for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "domain",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Domain"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull",
+            "content": "appliction/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/loginPageSettings": {
+      "put": {
+        "summary": "Updates loginPage Settings for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "loginsettings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/loginsettings"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/common-login-page-settings": {
+      "put": {
+        "summary": "Updates common login page Settings for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "commonloginsettings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/commonloginsettings"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/individual-login-page-settings": {
+      "put": {
+        "summary": "Updates individual login page Settings for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "individualloginsettings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/individualloginsettings"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/loginPageSettings/{orgId}": {
+      "get": {
+        "summary": "gets configs for loginpage",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orgId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "orgId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/brandingPageSettings": {
+      "put": {
+        "summary": "Updates brandingpage Settings for domain",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "brandingsettings",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/brandingsettings"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/imageContent": {
+      "put": {
+        "summary": "Upload Image Content",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "imageparameters",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/imageparameters"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully Updated",
+            "content": "application/json"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes Image Content and Image Hash in the Org level Settings",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "name": "deleteimagemodel",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/deleteimagemodel"
+            },
+            "examples": "example",
+            "required": true,
+            "description": "The model for the parameters are described below."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": {
+              "status": "success"
+            },
+            "content": "application/json"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/imageContent/{imageContent}?orgId={orgId}&hash={hash}": {
+      "get": {
+        "summary": "Gets the Image Content when Org Id and Hash are passed as query param and takes Image Name as Path param",
+        "tags": [
+          "Domain configuration"
+        ],
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "imageContent",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Domain"
+          },
+          {
+            "in": "query",
+            "name": "orgId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Org Id of the Image Content which has to be retreived"
+          },
+          {
+            "in": "query",
+            "name": "hash",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Hash of the Image"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieves the Image content",
+            "content": "application/prs.binary"
+          }
+        }
+      }
+    },
+    "/api/configservice/domainconfiguration/genericSettings/{orgId}/{context}": {
+      "get": {
+        "summary": "gets configs for loginpage",
+        "tags": [
+          "Domain configuration"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "orgId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "orgId"
+          },
+          {
+            "in": "path",
+            "name": "context",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "context"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull",
+            "content": "application/json"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "domaincofig": {
+      "description": "Model token object for domain config API",
+      "properties": {
+        "apiBaseUrl": {
+          "type": "string",
+          "description": "apiBaseUrl of domain"
+        },
+        "domain": {
+          "type": "string",
+          "description": "domain name"
+        },
+        "orgId": {
+          "type": "string",
+          "description": "Organisation Id"
+        }
+      }
+    },
+    "productconfig": {
+      "description": "Model object for product config API",
+      "properties": {
+        "context": {
+          "type": "string",
+          "description": "context of product"
+        },
+        "attribName": {
+          "type": "string",
+          "description": "attribute name"
+        },
+        "value": {
+          "type": "string",
+          "description": "value of attribute"
+        }
+      }
+    },
+    "loginsettings": {
+      "description": "Model token object for login settings API",
+      "properties": {
+        "apiBaseUrl": {
+          "type": "string",
+          "description": "apiBaseUrl of domain"
+        },
+        "welcomeText": {
+          "type": "string",
+          "description": "Welcome Text of Login page"
+        },
+        "ssoText": {
+          "type": "string",
+          "description": "sso Text of Login page"
+        },
+        "supportText": {
+          "type": "string",
+          "description": "supportText of Login page"
+        },
+        "orgId": {
+          "type": "string",
+          "description": "Organisation Id"
+        },
+        "logoRedirectUrl": {
+          "type": "string",
+          "description": "logoRedirectUrl"
+        },
+        "headerText": {
+          "type": "string",
+          "description": "headerText"
+        },
+        "poweredByUnextLogo": {
+          "type": "boolean",
+          "description": "Boolean value to determine the display of poweredByUnext Logo"
+        }
+      }
+    },
+    "commonloginsettings": {
+      "description": "Model token object for common login settings API",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "description": "org Id of the domain"
+        },
+        "apiBaseUrl": {
+          "type": "string",
+          "description": "apiBaseUrl of domain"
+        },
+        "headerText": {
+          "type": "string",
+          "description": "headerText of the common login page"
+        },
+        "logoClickUrl": {
+          "type": "string",
+          "description": "logoClickUrl of the common login page"
+        },
+        "welcomeText": {
+          "type": "string",
+          "description": "Welcome Text of common Login page"
+        },
+        "learnerLoginText": {
+          "type": "string",
+          "description": "learnerLoginText of common Login page"
+        },
+        "learnerLoginUrl": {
+          "type": "string",
+          "description": "learnerLoginUrl of common Login page"
+        },
+        "nonLearnerLoginText": {
+          "type": "string",
+          "description": "nonLearnerLoginText of common Login page"
+        },
+        "nonLearnerLoginUrl": {
+          "type": "string",
+          "description": "nonLearnerLoginUrl of common Login page"
+        },
+        "copyright": {
+          "type": "string",
+          "description": "copyright text for the common login page"
+        },
+        "isTermsAndCondition": {
+          "type": "boolean",
+          "description": "TermsAndCondition flag value"
+        },
+        "isPrivacyPolicy": {
+          "type": "boolean",
+          "description": "PrivacyPolicy flag value"
+        },
+        "termsAndConditionText": {
+          "type": "string",
+          "description": "termsAndConditionText - pass if isTermsAndCondition is true",
+          "required": false
+        },
+        "privacyPolicyText": {
+          "type": "string",
+          "description": "privacyPolicyText - pass if isPrivacyPolicy is true",
+          "required": false
+        },
+        "poweredByUnextLogo": {
+          "type": "boolean",
+          "description": "Boolean value to determine the display of poweredByUnext Logo"
+        }
+      }
+    },
+    "individualloginsettings": {
+      "description": "Model token object for individual login settings API",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "description": "org Id of the domain"
+        },
+        "apiBaseUrl": {
+          "type": "string",
+          "description": "apiBaseUrl of domain"
+        },
+        "headerText": {
+          "type": "string",
+          "description": "headerText of the individual login page"
+        },
+        "logoClickUrl": {
+          "type": "string",
+          "description": "logoClickUrl of the individual login page"
+        },
+        "welcomeText": {
+          "type": "string",
+          "description": "Welcome Text of individual Login page"
+        },
+        "learnerLoginPersona": {
+          "type": "array",
+          "description": "learnerLoginPersona of individual Login page"
+        },
+        "nonLearnerLoginPersona": {
+          "type": "string",
+          "description": "nonLearnerLoginPersona of individual Login page eg. sso or native"
+        },
+        "ssoText": {
+          "type": "string",
+          "description": "ssoText of individual Login page - pass only if the nonLearnerPersona and Learner Persona includes sso",
+          "required": false
+        },
+        "supportText": {
+          "type": "string",
+          "description": "supportText of individual Login page"
+        },
+        "copyright": {
+          "type": "string",
+          "description": "copyright text for the individual login page"
+        },
+        "isTermsAndCondition": {
+          "type": "boolean",
+          "description": "TermsAndCondition flag value"
+        },
+        "isPrivacyPolicy": {
+          "type": "boolean",
+          "description": "PrivacyPolicy flag value"
+        },
+        "termsAndConditionText": {
+          "type": "string",
+          "description": "termsAndConditionText - pass if isTermsAndCondition is true",
+          "required": false
+        },
+        "privacyPolicyText": {
+          "type": "string",
+          "description": "privacyPolicyText - pass if isPrivacyPolicy is true",
+          "required": false
+        },
+        "poweredByUnextLogo": {
+          "type": "boolean",
+          "description": "Boolean value to determine the display of poweredByUnext Logo"
+        }
+      }
+    },
+    "brandingsettings": {
+      "description": "Model token object for branding settings API",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "description": "Org Id of the Domain"
+        },
+        "bannerType": {
+          "type": "string",
+          "description": "bannerType of the background Image which we are setting"
+        },
+        "headerText": {
+          "type": "string",
+          "description": "Header Text for the branding Page"
+        },
+        "greetingsText": {
+          "type": "string",
+          "description": "Welcome message of the Branding Page"
+        },
+        "announcementMessage": {
+          "type": "string",
+          "description": "Announcement message for the Branding Page (should be passed if announcement status is true)"
+        },
+        "announcementStatus": {
+          "type": "boolean",
+          "description": "Boolean value decides wheather the announcementMessage should display"
+        },
+        "screenDuration": {
+          "type": "string",
+          "description": "screenDuration of the Message"
+        },
+        "poweredByUnextLogo": {
+          "type": "boolean",
+          "description": "Boolean value to determine the display of poweredByUnext Logo"
+        }
+      }
+    },
+    "imageparameters": {
+      "description": "Model token object for upload Image API",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "description": "Org Id of the Domain"
+        },
+        "imageName": {
+          "type": "string",
+          "description": "Name of the image"
+        },
+        "imageContent": {
+          "type": "string",
+          "description": "Image content as base64"
+        },
+        "uriContext": {
+          "type": "string",
+          "description": "context of the Image"
+        }
+      }
+    },
+    "deleteimagemodel": {
+      "description": "Model deleteImage object for Delete Image API",
+      "properties": {
+        "orgId": {
+          "type": "string",
+          "description": "Org Id of the Org Level for which the Image content and Hash should be deleted"
+        },
+        "imageName": {
+          "type": "string",
+          "description": "imageName of the Org for which the content and hash should be deleted"
+        }
+      }
+    }
+  },
+  "responses": {},
+  "parameters": {},
+  "securityDefinitions": {},
+  "tags": []
+}
